@@ -1,7 +1,16 @@
+@font-face {
+    font-family: "Moisses Serif";
+    src: url("../../assets/fonts/Moisses-Round.ttf");
+}
+
 * {
+    font-family: "Moisses Serif", Helvetica, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-weight: 400;
+    text-decoration-line: none;
+
 }
 
 body {
@@ -9,12 +18,177 @@ body {
     width: 100%;
 }
 
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(96 27 15);
+    /* position: fixed; */
+    z-index: 100;
+    width: 100%;
+    top: 0;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
 .header-container {
+    width: 1280px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
 .logo img {
-    max-width: 120px;
+    max-width: 160px;
 }
+.nav {
+    align-items: center;
+    display: flex;
+}
+.nav-items {
+    min-width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.nav-item a {
+    /* font-family: "Moisses Serif"; */
+    letter-spacing: 0.07em;
+    font-size: 1.5vw;
+    font-weight: 400;
+    color: #e2983a;
+    text-decoration: none;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(../../assets/images/old.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    align-items: center;
+    background-color: #601b0f;
+}
+
+.main-container {
+    width: 1280px;
+    display: flex;
+    flex-direction: column;
+    height: 55.9vw;
+}
+
+.main-block {
+    top: 14vw;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 30vw;
+}
+
+.main-right a {
+    top: 23vw;
+    position: relative;
+    padding: 10px;
+    letter-spacing: 0.1em;
+    font-size: 1.5vw;
+    font-weight: 400;
+    color: #e2983a;
+    background-color: #51150c;
+    border-radius: 25px;
+}
+
+h1 {
+    /* font-family: "Moisses Serif"; */
+    padding: 10px;
+    letter-spacing: 0.1em;
+    font-size: 2.5vw;
+    font-weight: 600;
+    color: #e2983a;
+    background-color: #51150c;
+    border-radius: 25px;
+}
+
+.book-container {
+    width: 1280px;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+}
+
+.book-block {
+    display: flex;
+    flex-direction: column;
+}
+.book-block {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.card img{
+    width: 200px;
+}
+
+.bag-card img{
+    width: 100px;
+}
+
+.popup {
+    display: flex;
+    flex-direction: row;
+}
+
+.popup .book-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.popup-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    /* width: 500px; */
+    max-width: 80%;
+  }
+
+  .popup-window.active {
+    transform: translate(-50%, -50%) scale(1);
+
+  }
+  
+  .close-popup {
+    
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  .popup-background {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+  }
+  
+  .popup-background.active {
+    opacity: 1;
+    pointer-events: all;
+  }
